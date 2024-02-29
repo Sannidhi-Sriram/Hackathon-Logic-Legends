@@ -1,3 +1,4 @@
+# This is the first piece of program from our project we have been researching about different websites to get the most effective dataset to include in our project
 import requests 
 from bs4 import BeautifulSoup 
   
