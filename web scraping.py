@@ -87,4 +87,41 @@ lines = leftbar.find_all('li')
 
 for line in lines: 
 	print(line.text)
+import requests 
+from bs4 import BeautifulSoup 
+
+
+# Making a GET request 
+r = requests.get('https://www.geeksforgeeks.org/python-programming-language/') 
+
+# Parsing the HTML 
+soup = BeautifulSoup(r.content, 'html.parser') 
+
+# Finding by id 
+s = soup.find('div', id= 'main') 
+
+# Getting the leftbar 
+leftbar = s.find('ul', class_='leftBarList') 
+
+# All the li under the above ul 
+content = leftbar.find_all('li') 
+
+print(content)
+
+import requests 
+from bs4 import BeautifulSoup 
+
+
+# Making a GET request 
+r = requests.get('https://www.w3schools.com/python/') 
+
+# Parsing the HTML 
+soup = BeautifulSoup(r.content, 'html.parser') 
+
+s = soup.find('div', class_='entry-content') 
+
+lines = s.find_all('p') 
+
+for line in lines: 
+	print(line.text)
 
